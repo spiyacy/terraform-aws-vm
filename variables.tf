@@ -19,11 +19,6 @@ variable "foundation_workspace" {
   description = "Name of workspace from which to get information on VPC in which to provision resources."
 }
 
-variable "sg_workspace" {
-  type        = string
-  description = "Name of workspace from which to get foundational security groups to use."
-}
-
 variable "ami_filter" {
   type        = string
   description = "AMI filter - e.g. ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"
@@ -39,18 +34,6 @@ variable "ami_owner" {
 variable "ami_id" {
   type        = string
   description = "Optional AMI ID - use this if not blank string, otherwise use AMI per ami_filter and ami_owner."
-  default     = ""
-}
-
-variable "hcp_packer_image_bucket_name" {
-  type        = string
-  description = "The slug of the HCP Packer Registry image bucket to pull from."
-  default     = ""
-}
-
-variable "hcp_packer_image_channel" {
-  type        = string
-  description = "The channel that points to the version of the image you want."
   default     = ""
 }
 
