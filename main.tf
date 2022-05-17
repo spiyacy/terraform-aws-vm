@@ -64,7 +64,5 @@ resource "aws_instance" "instance" {
 
   #user_data                   = data.template_file.user_data.rendered
 
-  tags = {
-    Name = "${var.prefix}-demo"
-  }
+  tags = var.buildTags
 }
