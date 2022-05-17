@@ -10,7 +10,7 @@ terraform {
 provider "aws" {
   region = var.region
   default_tags {
-    tags = var.tags
+    tags = var.buildTags
   }
 }
 
@@ -54,7 +54,7 @@ resource "aws_instance" "instance" {
   subnet_id                   = element(data.terraform_remote_state.foundation.outputs.public_subnets, count.index)
   ami                         = local.ami_id
   instance_type               = var.instance_type
-  vpc_security_group_ids      = [data.terraform_remote_state.foundation.outputs.ingress_security_group_id, data.terraform_remote_state.sg.outputs.egress_security_group_id]
+  vpc_security_group_ids      = [data.terraform_remote_state.foundation.outputs.ingress_security_group_id, data.terraform_remote_state.foundation.outputs.egress_security_group_id]
   key_name                    = var.ssh_key_name
   associate_public_ip_address = true
   root_block_device {
