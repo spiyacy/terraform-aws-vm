@@ -1,4 +1,4 @@
 variable "buildTags" {
-  type    = list(string)
-  default = []
+  type    = map(string)
+  default = {}
 }
