@@ -13,3 +13,7 @@ output "private_dns" {
 output "public_dns" {
   value = aws_instance.instance[*].public_dns
 }
+
+output "root_block_device_info" {
+  value = aws_instance.instance[*].root_block_device
+}

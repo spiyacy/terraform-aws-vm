@@ -1,7 +1,7 @@
 variable "region" {
   type        = string
   description = "AWS Region in which to deploy our instance."
-  default     = "us-east-1"
+  default     = "us-east-2"
 }
 
 variable "org" {
@@ -46,7 +46,7 @@ variable "instance_count" {
 variable "instance_type" {
   type        = string
   description = "Instance size."
-  default     = "t2.medium"
+  default     = "t2.micro"
 }
 
 variable "root_volume_type" {
@@ -68,6 +68,6 @@ variable "ssh_key_name" {
 
 variable "owner_cidr_blocks" {
   type        = list(string)
-  description = "CIDR blocks that will be allowed to access our instance."
+  description = "Home Network IP address (recommended as a x.x.x.x/32 format to be used for connections)."
   default     = ["0.0.0.0/0"]
 }
