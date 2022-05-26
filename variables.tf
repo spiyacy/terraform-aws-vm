@@ -1,7 +1,6 @@
 variable "region" {
   type        = string
   description = "AWS Region in which to deploy our instance."
-  default     = "us-east-2"
 }
 
 variable "org" {
@@ -66,8 +65,10 @@ variable "ssh_key_name" {
   description = "Name of SSH key in AWS region."
 }
 
+/*
 variable "owner_cidr_blocks" {
   type        = list(string)
   description = "Home Network IP address (recommended as a x.x.x.x/32 format to be used for connections)."
   default     = ["0.0.0.0/0"]
 }
+*/
