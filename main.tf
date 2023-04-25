@@ -61,9 +61,14 @@ resource "aws_instance" "instance" {
     volume_type = var.root_volume_type
     volume_size = var.root_volume_size
   }
+  get_password_data = true
 
   #user_data                   = data.template_file.user_data.rendered
   tags = {
     Name = "${var.prefix}-build"
   }
+}
+
+output "instance_password" {
+  value = ["${resource.aws_instance.instance[*].password_data}"]
 }
